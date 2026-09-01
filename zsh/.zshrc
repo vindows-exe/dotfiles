@@ -77,3 +77,8 @@ sdk() {
 
 _ZO_DOCTOR=0
 eval "$(zoxide init zsh --cmd cd)"
+
+# --- Fastfetch beim interaktiven Start ---
+if [[ -o interactive ]] && command -v fastfetch >/dev/null 2>&1; then
+  fastfetch
+fi
