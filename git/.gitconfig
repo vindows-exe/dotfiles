@@ -1,7 +1,6 @@
-[user]
-	email = redacted@example.invalid
-	name = REDACTED
 [core]
   editor = nvim
-[includeIf "hasconfig:remote.*.url:*github.com*"]
+[include]
+    path = ~/.gitconfig-local
+[includeIf "hasconfig:remote.*.url:**github.com*/**"]
     path = ~/.gitconfig-personal

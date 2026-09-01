@@ -122,7 +122,15 @@ brew services start felixkratz/formulae/sketchybar
    ```bash
    nano ~/.zsh/secrets.zsh
    ```
-4. Persönliches Git-Profil (optional, für SSH-Key-Switching):
+4. Standard-Git-Identität einrichten (erforderlich, sonst fehlen Name/E-Mail bei Commits):
+   ```bash
+   nano ~/.gitconfig-local
+   # Inhalt:
+   # [user]
+   #   name = <Dein Name>
+   #   email = <Deine Standard-E-Mail>
+   ```
+5. Persönliches Git-Profil für GitHub-Remotes (optional, z. B. Pseudonym/Privat-Mail):
    ```bash
    nano ~/.gitconfig-personal
    # Inhalt:

@@ -78,10 +78,11 @@ stow -D -v -t ~ nvim
 
 ## Secrets und lokale Overrides
 
-Sensible Daten wie SSH-Keys, Cloud-Credentials, API-Tokens, Befehlshistorien und private Git-Konfigurationen (`.gitconfig-personal`, `.gitconfig.*`) sind in der `.gitignore` blockiert.
+Sensible Daten wie SSH-Keys, Cloud-Credentials, API-Tokens, Befehlshistorien und private Git-Konfigurationen (`.gitconfig-local`, `.gitconfig-personal`, `.gitconfig.*`) sind in der `.gitignore` blockiert bzw. liegen außerhalb des Repos direkt in `$HOME`.
 
 - **Umgebungsvariablen & API-Keys:** In `~/.zsh/secrets.zsh` ablegen (wird von `.zshrc` eingebunden).
-- **Git SSH-Key-Switching:** In `~/.gitconfig-personal` ablegen (wird via `includeIf` in `.gitconfig` eingebunden).
+- **Standard-Git-Identität (Name/E-Mail):** In `~/.gitconfig-local` ablegen (wird unbedingt via `include` in `.gitconfig` eingebunden). So landet die echte Identität nie im Repo.
+- **Git SSH-Key-/Identitäts-Switching für GitHub:** In `~/.gitconfig-personal` ablegen (wird via `includeIf` in `.gitconfig` nur für GitHub-Remotes eingebunden).
 
 ## Dokumentation
 
