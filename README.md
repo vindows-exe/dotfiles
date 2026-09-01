@@ -20,9 +20,9 @@ Die Konfigurationen sind in eigenständige GNU Stow-Pakete unterteilt:
 
 | Paket | Tool | Beschreibung |
 | :--- | :--- | :--- |
-| `aerospace` | AeroSpace | Tiling Window Manager für macOS (Workspaces, Keybindings) |
+| `aerospace` | AeroSpace | Tiling Window Manager für macOS (Workspaces, Multi-Monitor, App-Routing) |
 | `borders` | JankyBorders | Aktive und inaktive Fensterrahmen |
-| `sketchybar` | Sketchybar | Statusleiste für macOS (Workspaces, Systemstatus) |
+| `sketchybar` | Sketchybar | Statusleiste für macOS (Workspaces, Systemstatus, Musik, VPN) |
 | `ghostty` | Ghostty | Terminal-Emulator (Font, Theme, Keybindings) |
 | `nvim` | Neovim | LazyVim Setup (Plugins, LSP, Keymaps) |
 | `tmux` | Tmux | Terminal-Multiplexer (Prefix `C-a`, Splits, Sessionizer) |
@@ -76,9 +76,10 @@ stow -D -v -t ~ nvim
 
 ## Secrets und lokale Overrides
 
-Sensible Daten wie SSH-Keys, Cloud-Credentials, API-Tokens und Befehlshistorien sind in der `.gitignore` blockiert. 
+Sensible Daten wie SSH-Keys, Cloud-Credentials, API-Tokens, Befehlshistorien und private Git-Konfigurationen (`.gitconfig-personal`, `.gitconfig.*`) sind in der `.gitignore` blockiert.
 
-Lokale Umgebungsvariablen und Secrets können in `~/.zsh/secrets.zsh` hinterlegt werden. Diese Datei wird von `~/.zshrc` geladen, verbleibt jedoch ausschließlich lokal.
+- **Umgebungsvariablen & API-Keys:** In `~/.zsh/secrets.zsh` ablegen (wird von `.zshrc` eingebunden).
+- **Git SSH-Key-Switching:** In `~/.gitconfig-personal` ablegen (wird via `includeIf` in `.gitconfig` eingebunden).
 
 ## Dokumentation
 

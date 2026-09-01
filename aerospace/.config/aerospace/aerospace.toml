@@ -16,7 +16,12 @@ inner.horizontal = 10
 inner.vertical =   10
 outer.left =       10
 outer.bottom =     10
-outer.top =        38
+outer.top = [
+  { monitor."built-in" = 10 },
+  { monitor."Built-in Retina Display" = 10 },
+  { monitor."main" = 38 },
+  38
+]
 outer.right =      10
 
 [workspace-to-monitor-force-assignment]
@@ -99,11 +104,12 @@ run = 'move-node-to-workspace 3'
 if.app-id = 'com.microsoft.Outlook'
 run = 'move-node-to-workspace 4'
 
-# Workspace 5: Teams and YouTube Music
+# Workspace 5: Teams
 [[on-window-detected]]
 if.app-id = 'com.microsoft.teams2'
 run = 'move-node-to-workspace 5'
 
+# Workspace 6: Youtube Music
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome.app.cinhimbnkkaeohfgghhklpknlkffjgod'
-run = 'move-node-to-workspace 5'
+run = 'move-node-to-workspace 6'

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Extract SSID reliably on macOS Sonoma/Sequoia/Tahoe
+# Extract SSID reliably on macOS
 SSID=$(ipconfig getsummary en0 2>/dev/null | awk -F 'SSID : ' '/ SSID : /{print $2}')
 
 if [ -z "$SSID" ]; then
@@ -8,11 +8,26 @@ if [ -z "$SSID" ]; then
 fi
 
 if [ -z "$SSID" ] || [ "$SSID" = "You are not associated with an AirPort network." ] || [[ "$SSID" =~ "Error" ]] || [[ "$SSID" =~ "error" ]]; then
-  sketchybar --set "$NAME" icon="󰖪" label="Disconnected" icon.color="0xff727169"
+  sketchybar --set "$NAME" \
+    icon="󰖪" \
+    icon.color="0xff727169" \
+    label="Disconnected" \
+    label.drawing=on \
+    label.color="0xff727169"
+elif [ "$SSID" = "<redacted>" ] || [ "$SSID" = "nil" ]; then
+  # Fallback wenn macOS Ortungsdienste den echten Namen sperren
+  sketchybar --set "$NAME" \
+    icon="󰖩" \
+    icon.color="0xff6a9589" \
+    label="WLAN" \
+    label.drawing=on \
+    label.color="0xffdcd7ba"
 else
-  # Truncate long SSIDs if needed
-  if [ ${#SSID} -gt 16 ]; then
-    SSID="$(echo "$SSID" | cut -c 1-13)..."
-  fi
-  sketchybar --set "$NAME" icon="󰖩" label="$SSID" icon.color="0xff6a9589"
+  # Wenn freigegeben: Tatsaechlichen WLAN-Namen anzeigen
+  sketchybar --set "$NAME" \
+    icon="󰖩" \
+    icon.color="0xff6a9589" \
+    label="$SSID" \
+    label.drawing=on \
+    label.color="0xffdcd7ba"
 fi

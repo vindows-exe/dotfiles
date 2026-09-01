@@ -66,6 +66,15 @@ settings.local.json
 karabiner/automatic_backups/
 automatic_backups/
 
+# Private Git Configs (z. B. SSH Key Switching, Firmen- / Personal-Profile)
+.gitconfig-personal
+.gitconfig-*
+.gitconfig.*
+*.gitconfig-*
+*.gitconfig.*
+gitconfig.local
+gitconfig.private
+
 # --- Shell- & REPL-Historien / Laufzeit-Zustände ---
 .*_history
 *.history

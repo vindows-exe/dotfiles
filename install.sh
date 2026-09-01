@@ -52,10 +52,14 @@ case "$OS" in
             tmux
             fzf
             ripgrep
+            fd
             eza
             bat
+            lazygit
             starship
             yazi
+            zoxide
+            nowplaying-cli
             zsh-autosuggestions
             zsh-syntax-highlighting
             fnm
@@ -80,13 +84,13 @@ case "$OS" in
         if command -v apt-get >/dev/null 2>&1; then
             log_info "Nutze APT (Debian/Ubuntu)..."
             sudo apt-get update -y
-            sudo apt-get install -y git stow neovim tmux fzf ripgrep zsh curl
+            sudo apt-get install -y git stow neovim tmux fzf ripgrep fd-find zsh curl
         elif command -v pacman >/dev/null 2>&1; then
             log_info "Nutze Pacman (Arch Linux)..."
-            sudo pacman -Syu --noconfirm git stow neovim tmux fzf ripgrep zsh
+            sudo pacman -Syu --noconfirm git stow neovim tmux fzf ripgrep fd zsh
         elif command -v dnf >/dev/null 2>&1; then
             log_info "Nutze DNF (Fedora/RHEL)..."
-            sudo dnf install -y git stow neovim tmux fzf ripgrep zsh
+            sudo dnf install -y git stow neovim tmux fzf ripgrep fd-find zsh
         else
             log_warn "Kein bekannter Paketmanager gefunden. Bitte installiere git, stow, neovim, tmux manuell."
         fi

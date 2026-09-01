@@ -35,7 +35,7 @@ sketchybar --default \
   padding_left=3 \
   padding_right=3
 
-# --- Links: AeroSpace Workspaces (1 bis 6) ---
+# --- Links: AeroSpace Workspaces (1 bis 6) & Aktiver Fenstertitel ---
 sketchybar --add event aerospace_workspace_change
 
 for sid in 1 2 3 4 5 6; do
@@ -54,8 +54,7 @@ for sid in 1 2 3 4 5 6; do
     --subscribe space.$sid aerospace_workspace_change
 done
 
-# --- Mitte: Aktueller Fenstertitel ---
-sketchybar --add item window_title center \
+sketchybar --add item window_title left \
   --set window_title \
     icon="󰘳" \
     icon.color=$ACCENT_VIOLET \
@@ -65,10 +64,13 @@ sketchybar --add item window_title center \
     background.color=$BG_PILL \
     background.corner_radius=6 \
     background.height=24 \
+    padding_left=10 \
+    padding_right=3 \
     script="$CONFIG_DIR/plugins/window_title.sh" \
   --subscribe window_title front_app_switched space_windows_change aerospace_workspace_change
 
-# --- Rechts: System-Pillen (Uhrzeit, Akku, WLAN) ---
+# --- Rechts: System- & Menueleisten-Pillen ---
+# 1. Uhrzeit (ganz rechts)
 sketchybar --add item clock right \
   --set clock \
     icon="" \
@@ -76,16 +78,57 @@ sketchybar --add item clock right \
     update_freq=10 \
     script="$CONFIG_DIR/plugins/clock.sh"
 
+# 2. Vorssaint (links neben der Uhr)
+sketchybar --add item vorssaint right \
+  --set vorssaint \
+    icon="󰀝" \
+    icon.color=$ACCENT_AQUA \
+    label="Vorssaint" \
+    label.color=$TEXT_COLOR \
+    background.color=$BG_PILL \
+    background.corner_radius=6 \
+    background.height=24 \
+    click_script="osascript -e 'tell application \"System Events\" to tell process \"Vorssaint\" to perform action \"AXPress\" of menu bar item 1 of menu bar 2' 2>/dev/null || osascript -e 'tell application \"System Events\" to tell process \"Vorssaint\" to click menu bar item 1 of menu bar 1' 2>/dev/null || open -a Vorssaint"
+
+# 3. Akku (links neben Vorssaint)
 sketchybar --add item battery right \
   --set battery \
     update_freq=30 \
     script="$CONFIG_DIR/plugins/battery.sh" \
   --subscribe battery system_woke power_source_change
 
+# 4. WLAN (links neben Akku)
 sketchybar --add item wifi right \
   --set wifi \
     update_freq=30 \
     script="$CONFIG_DIR/plugins/wifi.sh" \
   --subscribe wifi wifi_change
+
+# 5. VPN (links neben WLAN)
+sketchybar --add item vpn right \
+  --set vpn \
+    icon="󰖂" \
+    icon.color=$ACCENT_BLUE \
+    label="VPN" \
+    label.color=$TEXT_COLOR \
+    background.color=$BG_PILL \
+    background.corner_radius=6 \
+    background.height=24 \
+    click_script="osascript -e 'tell application \"System Events\" to tell process \"GlobalProtect\" to perform action \"AXPress\" of menu bar item 1 of menu bar 2' 2>/dev/null || osascript -e 'tell application \"System Events\" to tell process \"GlobalProtect\" to click menu bar item 1 of menu bar 1' 2>/dev/null || open -a GlobalProtect"
+
+# 6. Musik (links neben VPN)
+sketchybar --add item music right \
+  --set music \
+    icon="󰝚" \
+    icon.color=$ACCENT_AQUA \
+    label="" \
+    label.color=$TEXT_COLOR \
+    background.color=$BG_PILL \
+    background.corner_radius=6 \
+    background.height=24 \
+    update_freq=3 \
+    script="$CONFIG_DIR/plugins/music.sh" \
+    click_script="/opt/homebrew/bin/nowplaying-cli togglePlayPause" \
+    drawing=off
 
 sketchybar --update
