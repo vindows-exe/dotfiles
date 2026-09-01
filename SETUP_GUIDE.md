@@ -25,6 +25,7 @@ Dokumentation der installierten Software und Anleitung zur Einrichtung eines neu
 | **Tmux** | Terminal-Multiplexer | `brew install tmux` |
 | **GNU Stow** | Symlink-Manager für Dotfiles | `brew install stow` |
 | **Starship** | Shell-Prompt | `brew install starship` |
+| **Fastfetch** | Minimalistisches Systeminfo-Tool | `brew install fastfetch` |
 | **Yazi** | Terminal-Dateimanager | `brew install yazi` |
 | **lazygit** | Terminal-UI für Git | `brew install lazygit` |
 | **nowplaying-cli** | CLI für macOS Mediensteuerung (Sketchybar) | `brew install nowplaying-cli` |
@@ -59,6 +60,7 @@ Dokumentation der installierten Software und Anleitung zur Einrichtung eines neu
 | `opencode` | `~/.config/opencode/` | Agenten-Prompts |
 | `raycast-scripts` | `~/.config/RaycastScripts/` | Benutzerdefinierte Skripte |
 | `starship` | `~/.config/starship.toml` | Prompt-Layout |
+| `fastfetch` | `~/.config/fastfetch/config.jsonc` | Minimalistisches Systeminfo-Layout |
 | `tmux` | `~/.config/tmux/` | `tmux.conf` und `tmux-sessionizer` |
 | `yazi` | `~/.config/yazi/yazi.toml` | Dateimanager-Konfiguration |
 | `zsh` | `~/.zshrc`, `~/.zprofile`, `~/.zsh/` | Shell-Konfiguration |

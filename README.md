@@ -28,6 +28,7 @@ Die Konfigurationen sind in eigenständige GNU Stow-Pakete unterteilt:
 | `tmux` | Tmux | Terminal-Multiplexer (Prefix `C-a`, Splits, Sessionizer) |
 | `zsh` | Zsh | Shell-Konfiguration (Aliase, Environment, Plugins) |
 | `starship` | Starship | Prompt-Konfiguration |
+| `fastfetch` | Fastfetch | Minimalistisches Systeminfo-Tool |
 | `git` | Git | Globale Git-Einstellungen und Ignore-Regeln |
 | `yazi` | Yazi | Terminal-Dateimanager |
 | `karabiner` | Karabiner-Elements | Tastatur-Remapping (Caps-Lock zu Hyper-Key) |
@@ -40,6 +41,7 @@ Die Konfigurationen sind in eigenständige GNU Stow-Pakete unterteilt:
 ~/dotfiles/
 ├── aerospace/            # ~/.config/aerospace/
 ├── borders/              # ~/.config/borders/
+├── fastfetch/            # ~/.config/fastfetch/
 ├── sketchybar/           # ~/.config/sketchybar/
 ├── ghostty/              # ~/.config/ghostty/
 ├── git/                  # ~/.gitconfig und ~/.config/git/

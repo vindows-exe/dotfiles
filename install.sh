@@ -59,6 +59,7 @@ case "$OS" in
             starship
             yazi
             zoxide
+            fastfetch
             nowplaying-cli
             zsh-autosuggestions
             zsh-syntax-highlighting
@@ -84,13 +85,13 @@ case "$OS" in
         if command -v apt-get >/dev/null 2>&1; then
             log_info "Nutze APT (Debian/Ubuntu)..."
             sudo apt-get update -y
-            sudo apt-get install -y git stow neovim tmux fzf ripgrep fd-find zsh curl
+            sudo apt-get install -y git stow neovim tmux fzf ripgrep fd-find fastfetch zsh curl
         elif command -v pacman >/dev/null 2>&1; then
             log_info "Nutze Pacman (Arch Linux)..."
-            sudo pacman -Syu --noconfirm git stow neovim tmux fzf ripgrep fd zsh
+            sudo pacman -Syu --noconfirm git stow neovim tmux fzf ripgrep fd fastfetch zsh
         elif command -v dnf >/dev/null 2>&1; then
             log_info "Nutze DNF (Fedora/RHEL)..."
-            sudo dnf install -y git stow neovim tmux fzf ripgrep fd-find zsh
+            sudo dnf install -y git stow neovim tmux fzf ripgrep fd-find fastfetch zsh
         else
             log_warn "Kein bekannter Paketmanager gefunden. Bitte installiere git, stow, neovim, tmux manuell."
         fi
@@ -131,6 +132,7 @@ ALL_PACKAGES=(
     tmux
     nvim
     yazi
+    fastfetch
     opencode
 )
 
