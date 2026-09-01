@@ -1,7 +1,7 @@
 # ⚡️ Modular Dotfiles
 
 > **A modern, keyboard-centric, and reproducible terminal development environment powered by GNU Stow.**  
-> Crafted with an unified **Gruvbox Dark** aesthetic, seamless **Neovim & Tmux** navigation, and **AeroSpace** tiling window management.
+> Crafted with a unified **Gruvbox Dark** aesthetic, seamless **Neovim & Tmux** navigation, **AeroSpace** tiling window management, **Sketchybar**, and **JankyBorders**.
 
 ---
 
@@ -21,12 +21,14 @@ Jedes Tool ist als eigenständiges, isoliertes **GNU Stow Paket** organisiert:
 
 | Paket | Tool | Zweck & Highlights |
 | :--- | :--- | :--- |
+| **`aerospace`** | [AeroSpace](https://github.com/nikitabobko/AeroSpace) | Tiling Window Manager für macOS mit i3-artigen Keybindings (`Cmd+Alt+h/j/k/l`) & Workspace-Routing. |
+| **`borders`** | [JankyBorders](https://github.com/FelixKratz/JankyBorders) | Animierte, abgerundete Fensterrahmen im Gruvbox-Orange-Look (`0xfffe8019`). |
+| **`sketchybar`** | [Sketchybar](https://github.com/FelixKratz/Sketchybar) | Hochgradig anpassbare macOS-Statusleiste mit AeroSpace-Workspaces, Akku, WLAN, Uhr & Gruvbox-Farben. |
+| **`ghostty`** | [Ghostty](https://ghostty.org/) | GPU-beschleunigter Terminal-Emulator mit JetBrainsMono Nerd Font & `gruvbox-dark-hard` Palette. |
 | **`nvim`** | [Neovim](https://neovim.io/) / [LazyVim](https://www.lazyvim.org/) | Modulares Lua-Setup mit Gruvbox-Theme, Snacks, Harpoon & nativer Tmux-Navigation. |
 | **`tmux`** | [Tmux](https://github.com/tmux/tmux) | Terminal-Multiplexer mit TrueColor, `C-a` Prefix, intuitivem Split-Layout und `tmux-sessionizer`. |
 | **`zsh`** | [Zsh](https://www.zsh.org/) | Optimierte Shell mit `starship`, `fnm`, `fzf`, `eza`-Aliases, Autosuggestions & Syntax-Highlighting. |
 | **`starship`** | [Starship Prompt](https://starship.rs/) | Minimalistischer, ultraschneller Cross-Shell-Prompt im Gruvbox-Farbschema mit Git-Statusanzeige. |
-| **`ghostty`** | [Ghostty](https://ghostty.org/) | GPU-beschleunigter Terminal-Emulator mit JetBrainsMono Nerd Font & `gruvbox-dark-hard` Palette. |
-| **`aerospace`** | [AeroSpace](https://github.com/nikitabobko/AeroSpace) | Tiling Window Manager für macOS mit i3-artigen Keybindings (`Cmd+Alt+h/j/k/l`) & Workspace-Routing. |
 | **`git`** | [Git](https://git-scm.com/) | Globale Git-Konfiguration mit `nvim` als Editor und systemweiter `.gitignore`. |
 | **`yazi`** | [Yazi](https://github.com/sxyazi/yazi) | Asynchroner Terminal-Dateimanager mit Bildvorschau (`lanczos3`) & Zsh `y`-Wrapper für Verzeichniswechsel. |
 | **`karabiner`** | [Karabiner-Elements](https://karabiner-elements.pqrs.org/) | Systemweites macOS-Tastaturmapping (`Caps-Lock` als Hyper-Modifier). |
@@ -41,6 +43,13 @@ Jedes Tool ist als eigenständiges, isoliertes **GNU Stow Paket** organisiert:
 ~/dotfiles/
 ├── aerospace/            # AeroSpace Tiling Window Manager
 │   └── .config/aerospace/aerospace.toml
+├── borders/              # JankyBorders Fensterrahmen
+│   └── .config/borders/bordersrc
+├── sketchybar/           # Sketchybar Statusleiste & Plugins
+│   └── .config/sketchybar/
+│       ├── sketchybarrc
+│       ├── colors.sh
+│       └── plugins/
 ├── ghostty/              # Ghostty GPU Terminal & Custom Themes
 │   └── .config/ghostty/
 │       ├── config
@@ -76,7 +85,8 @@ Jedes Tool ist als eigenständiges, isoliertes **GNU Stow Paket** organisiert:
 ├── .gitignore            # Strikter Filter für Secrets, Keys & State
 ├── install.sh            # Idempotentes Bootstrap- & Verlinkungsskript
 ├── KEYMAPS.md            # Workflow Cheat Sheet & Shortcut-Übersicht
-└── README.md             # Dokumentation
+├── SETUP_GUIDE.md        # Vollständige Installations- und Setup-Anleitung
+└── README.md             # Projekt-Showcase
 ```
 
 ---

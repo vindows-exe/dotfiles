@@ -2,12 +2,15 @@ start-at-login = true
 
 default-root-container-layout = 'tiles'
 
+# Trigger SketchyBar update on workspace switch
+exec-on-workspace-change = ['/bin/bash', '-c', '/opt/homebrew/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE']
+
 [gaps]
 inner.horizontal = 10
 inner.vertical =   10
 outer.left =       10
 outer.bottom =     10
-outer.top =        10
+outer.top =        38
 outer.right =      10
 
 [workspace-to-monitor-force-assignment]

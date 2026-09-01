@@ -6,12 +6,14 @@ Eine vollständige Übersicht aller Anwendungen, Konfigurationsmodule und eine S
 
 ## 📦 1. Übersicht der Tools & Apps
 
-### 🖥️ GUI & System-Anwendungen (macOS)
-| App | Funktion & Zweck | Installationsbefehl (Homebrew Cask) |
+### 🖥️ Window Management & Statusbar (macOS)
+| App | Funktion & Zweck | Installationsbefehl |
 | :--- | :--- | :--- |
-| **[Ghostty](https://ghostty.org/)** | GPU-beschleunigter Terminal-Emulator mit JetBrains Mono & Gruvbox-Hard Theme | `brew install --cask ghostty` |
 | **[AeroSpace](https://github.com/nikitabobko/AeroSpace)** | i3-artiger Tiling Window Manager für macOS mit Multi-Monitor-Workspace-Routing | `brew install --cask nikitabobko/tap/aerospace` |
+| **[Sketchybar](https://github.com/FelixKratz/Sketchybar)** | Hochgradig anpassbare macOS-Statusleiste (AeroSpace-Workspaces, Akku, WLAN, Uhr) im Gruvbox-Stil | `brew install felixkratz/formulae/sketchybar` |
+| **[JankyBorders](https://github.com/FelixKratz/JankyBorders)** | Animierte, abgerundete Fensterrahmen im Gruvbox-Orange-Look (`0xfffe8019`) | `brew install felixkratz/formulae/borders` |
 | **[Karabiner-Elements](https://karabiner-elements.pqrs.org/)** | Systemweites Tastaturmapping (`Caps-Lock` als Hyper-Modifier) | `brew install --cask karabiner-elements` |
+| **[Ghostty](https://ghostty.org/)** | GPU-beschleunigter Terminal-Emulator mit JetBrains Mono & Gruvbox-Hard Theme | `brew install --cask ghostty` |
 | **[Raycast](https://www.raycast.com/)** | Spotlight-Alternative & Script-Launcher für macOS | `brew install --cask raycast` |
 
 ---
@@ -48,6 +50,8 @@ Alle Konfigurationen liegen modular in `~/dotfiles` und werden per GNU Stow in `
 | Stow-Paket | Ziel im System | Enthaltene Dateien / Funktion |
 | :--- | :--- | :--- |
 | **`aerospace`** | `~/.config/aerospace/aerospace.toml` | Keybindings (`Cmd+Alt+h/j/k/l`), Gaps, Multi-Monitor-Layout |
+| **`borders`** | `~/.config/borders/bordersrc` | JankyBorders Einstellungen (Rundung, Strichstärke, Gruvbox-Orange) |
+| **`sketchybar`** | `~/.config/sketchybar/` | `sketchybarrc`, `colors.sh` & Plugin-Skripte (`aerospace.sh`, `battery.sh`, `wifi.sh` etc.) |
 | **`ghostty`** | `~/.config/ghostty/config`<br>`~/.config/ghostty/themes/gruvbox-dark-hard` | Schriftgröße 14, Farben, Cursor, Neovim-Alt-Key-Verhalten |
 | **`git`** | `~/.gitconfig`<br>`~/.config/git/ignore` | Globaler User, Editor (`nvim`), globale Ignore-Muster |
 | **`karabiner`** | `~/.config/karabiner/karabiner.json` | Mapping von `Caps-Lock` auf `Cmd+Ctrl+Opt+Shift` |
@@ -68,23 +72,21 @@ Alle Konfigurationen liegen modular in `~/dotfiles` und werden per GNU Stow in `
 ```bash
 xcode-select --install
 ```
-*(Folge dem Installationsdialog und warte kurz, bis die Tools installiert sind.)*
+*(Folge dem Dialog und warte kurz, bis die Tools installiert sind.)*
 
 ---
 
 ### Schritt 2: GitHub SSH-Key einrichten (Empfohlen)
-Erstelle einen SSH-Schlüssel, um Repositories sicher ohne Passworteingabe zu klonen:
+Erstelle einen SSH-Schlüssel für GitHub:
 ```bash
 ssh-keygen -t ed25519 -C "deine.email@domain.com"
 cat ~/.ssh/id_ed25519.pub
 ```
-*(Kopiere den angezeigten Public Key und füge ihn auf [github.com/settings/keys](https://github.com/settings/keys) hinzu.)*
+*(Kopiere den Public Key und trage ihn unter [github.com/settings/keys](https://github.com/settings/keys) ein.)*
 
 ---
 
 ### Schritt 3: Dotfiles klonen & Bootstrap ausführen (One-Liner)
-
-Führe folgenden Befehl aus:
 
 ```bash
 git clone git@github.com:<dein-github-username>/dotfiles.git ~/dotfiles && cd ~/dotfiles && ./install.sh
@@ -92,14 +94,13 @@ git clone git@github.com:<dein-github-username>/dotfiles.git ~/dotfiles && cd ~/
 
 > **Was das Bootstrap-Skript `install.sh` automatisch erledigt:**
 > 1. Installiert Homebrew (falls noch nicht vorhanden).
-> 2. Installiert alle essenziellen CLI-Pakete (`git`, `stow`, `neovim`, `tmux`, `fzf`, `ripgrep`, `eza`, `bat`, `starship`, `yazi`, `fnm`, Zsh-Plugins).
-> 3. Setzt Ausführungsrechte für Skripte (`tmux-sessionizer`, `chrome-new-window.sh`).
+> 2. Installiert alle CLI-Pakete, JankyBorders & Sketchybar.
+> 3. Setzt Ausführungsrechte für Skripte (`tmux-sessionizer`, `bordersrc`, `sketchybarrc`, Plugins).
 > 4. Verlinkt alle Stow-Pakete fehlerfrei nach `~` und `~/.config`.
 
 ---
 
-### Schritt 4: GUI Apps & Casks installieren (macOS)
-Installiere die benötigten grafischen Tools und die Schriftart:
+### Schritt 4: GUI Apps & Schriftart installieren (macOS)
 
 ```bash
 brew install --cask \
@@ -112,9 +113,17 @@ brew install --cask \
 
 ---
 
-### Schritt 5: macOS Systemeinstellungen & Berechtigungen
+### Schritt 5: Background Services starten (macOS)
 
-Einige Tools benötigen für die Tastatur- und Fenstersteuerung spezielle macOS-Rechte:
+Starte die Hintergrunddienste für JankyBorders und Sketchybar:
+```bash
+brew services start felixkratz/formulae/borders
+brew services start felixkratz/formulae/sketchybar
+```
+
+---
+
+### Schritt 6: macOS Systemeinstellungen & Berechtigungen
 
 1. **AeroSpace & Karabiner-Elements:**
    - Öffne: **Systemeinstellungen $\rightarrow$ Datenschutz & Sicherheit $\rightarrow$ Bedienungshilfen** *(Accessibility)*.
@@ -127,12 +136,9 @@ Einige Tools benötigen für die Tastatur- und Fenstersteuerung spezielle macOS-
    - Gehe zu **Settings $\rightarrow$ Extensions $\rightarrow$ Script Commands**.
    - Klicke auf **Add Directory** und wähle `~/.config/RaycastScripts`.
 
-3. **Ghostty Schriftart:**
-   - Ghostty verwendet automatisch `JetBrainsMono Nerd Font` aus der Konfiguration.
-
 ---
 
-### Schritt 6: Shell & Plugins initialisieren
+### Schritt 7: Shell & Plugins initialisieren
 
 1. Starte deine Shell neu:
    ```bash
@@ -142,33 +148,27 @@ Einige Tools benötigen für die Tastatur- und Fenstersteuerung spezielle macOS-
    ```bash
    nvim
    ```
-3. *(Optional)* Private Secrets-Datei für sensible Umgebungsvariablen und API-Keys anlegen:
+3. *(Optional)* Private Secrets-Datei für API-Keys und Token anlegen (wird nicht in Git getrackt):
    ```bash
    nano ~/.zsh/secrets.zsh
-   # Beispiel:
-   # export ANTHROPIC_API_KEY="sk-..."
-   # export OPENAI_API_KEY="sk-..."
    ```
 
 ---
 
 ## 🔄 4. Tägliche Wartung & Synchronisation
 
-### Änderungen an Dotfiles vornehmen & hochladen
-Da alle Konfigurationsdateien per Symlink mit `~/dotfiles` verknüpft sind, kannst du deine Configs wie gewohnt bearbeiten (z. B. `nvim ~/.config/nvim/init.lua` oder `nvim ~/.zshrc`).
-
-Um Änderungen auf GitHub zu sichern:
+### Änderungen hochladen:
 ```bash
 cd ~/dotfiles
 git status
 git add .
-git commit -m "feat: update neovim and tmux config"
+git commit -m "feat: update configs"
 git push
 ```
 
-### Updates auf einem anderen Laptop abrufen
+### Updates auf einem anderen Laptop abrufen:
 ```bash
 cd ~/dotfiles
 git pull
-./install.sh   # Stellt sicher, dass neue Pakete verlinkt und Tools installiert werden
+./install.sh
 ```

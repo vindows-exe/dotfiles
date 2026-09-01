@@ -59,10 +59,13 @@ case "$OS" in
             zsh-autosuggestions
             zsh-syntax-highlighting
             fnm
+            felixkratz/formulae/borders
+            felixkratz/formulae/sketchybar
         )
 
         for formula in "${BREW_FORMULAE[@]}"; do
-            if brew list "$formula" >/dev/null 2>&1; then
+            formula_name="$(basename "$formula")"
+            if brew list "$formula_name" >/dev/null 2>&1 || brew list "$formula" >/dev/null 2>&1; then
                 log_success "Bereits installiert: $formula"
             else
                 log_info "Installiere $formula..."
@@ -101,6 +104,12 @@ esac
 log_info "Setze Ausführungsrechte für Skripte..."
 [[ -f "$DOTFILES_DIR/tmux/.config/tmux/tmux-sessionizer" ]] && chmod +x "$DOTFILES_DIR/tmux/.config/tmux/tmux-sessionizer"
 [[ -f "$DOTFILES_DIR/raycast-scripts/.config/RaycastScripts/chrome-new-window.sh" ]] && chmod +x "$DOTFILES_DIR/raycast-scripts/.config/RaycastScripts/chrome-new-window.sh"
+[[ -f "$DOTFILES_DIR/borders/.config/borders/bordersrc" ]] && chmod +x "$DOTFILES_DIR/borders/.config/borders/bordersrc"
+[[ -f "$DOTFILES_DIR/sketchybar/.config/sketchybar/sketchybarrc" ]] && chmod +x "$DOTFILES_DIR/sketchybar/.config/sketchybar/sketchybarrc"
+[[ -f "$DOTFILES_DIR/sketchybar/.config/sketchybar/colors.sh" ]] && chmod +x "$DOTFILES_DIR/sketchybar/.config/sketchybar/colors.sh"
+if [[ -d "$DOTFILES_DIR/sketchybar/.config/sketchybar/plugins" ]]; then
+    chmod +x "$DOTFILES_DIR/sketchybar/.config/sketchybar/plugins/"*.sh 2>/dev/null || true
+fi
 
 # ------------------------------------------------------------------------------
 # 3. GNU Stow Pakete anwenden
@@ -125,6 +134,8 @@ ALL_PACKAGES=(
 if [[ "$OS" == "Darwin" ]]; then
     ALL_PACKAGES+=(
         aerospace
+        borders
+        sketchybar
         ghostty
         karabiner
         raycast-scripts
@@ -152,6 +163,7 @@ printf "${GREEN}${BOLD}=====================================================${NC
 log_info "Nächste optionale Schritte:"
 echo "  1. Starte deine Shell neu:        exec zsh"
 echo "  2. Öffne Neovim für Plugin-Sync:  nvim"
-echo "  3. Schriftart prüfen:             JetBrainsMono Nerd Font installieren"
-echo "  4. Lokale Secrets einrichten:     ~/.zsh/secrets.zsh (wird nicht getrackt)"
+echo "  3. Services starten (macOS):      brew services start borders && brew services start sketchybar"
+echo "  4. Schriftart prüfen:             JetBrainsMono Nerd Font installieren"
+echo "  5. Lokale Secrets einrichten:     ~/.zsh/secrets.zsh (wird nicht getrackt)"
 echo ""
