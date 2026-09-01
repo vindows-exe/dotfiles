@@ -1,0 +1,100 @@
+start-at-login = true
+
+default-root-container-layout = 'tiles'
+
+[gaps]
+inner.horizontal = 10
+inner.vertical =   10
+outer.left =       10
+outer.bottom =     10
+outer.top =        10
+outer.right =      10
+
+[workspace-to-monitor-force-assignment]
+1 = 'main'      # Dein großer Monitor
+2 = 'main'
+3 = 'main'
+4 = 'main'
+5 = 'Built-in Retina Display'  # Dein Laptop-Display
+
+[mode.main.binding]
+# Navigation (Cmd+Alt + h/j/k/l)
+cmd-alt-h = 'focus left'
+cmd-alt-j = 'focus down'
+cmd-alt-k = 'focus up'
+cmd-alt-l = 'focus right'
+
+# Move (Cmd+Alt+Shift)
+cmd-alt-shift-h = 'move left'
+cmd-alt-shift-j = 'move down'
+cmd-alt-shift-k = 'move up'
+cmd-alt-shift-l = 'move right'
+
+# Workspaces
+cmd-alt-1 = 'workspace 1'
+cmd-alt-2 = 'workspace 2'
+cmd-alt-3 = 'workspace 3'
+cmd-alt-4 = 'workspace 4'
+cmd-alt-5 = 'workspace 5'
+cmd-alt-6 = 'workspace 6'
+
+# Fenster auf Workspace verschieben
+cmd-alt-shift-1 = 'move-node-to-workspace 1'
+cmd-alt-shift-2 = 'move-node-to-workspace 2'
+cmd-alt-shift-3 = 'move-node-to-workspace 3'
+cmd-alt-shift-4 = 'move-node-to-workspace 4'
+cmd-alt-shift-5 = 'move-node-to-workspace 5'
+cmd-alt-shift-6 = 'move-node-to-workspace 6'
+
+# Utilities
+cmd-alt-f = 'fullscreen'
+cmd-alt-q = 'close'
+cmd-alt-r = 'reload-config'
+
+# --- Floating Window ---
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Passwords'
+run = 'layout floating'
+
+# --- Automatic Workspaces ---
+
+# Workspace 1: Chrome and Ghostty
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = 'move-node-to-workspace 1'
+
+# Workspace 2: Obsidian and Preview
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Preview'
+run = 'move-node-to-workspace 2'
+
+# Workspace 3: VS Code
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = 'move-node-to-workspace 3'
+
+# Workspace 4: Outlook
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Outlook'
+run = 'move-node-to-workspace 4'
+
+# Workspace 5: Teams and YouTube Music
+[[on-window-detected]]
+if.app-id = 'com.microsoft.teams2'
+run = 'move-node-to-workspace 5'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome.app.cinhimbnkkaeohfgghhklpknlkffjgod'
+run = 'move-node-to-workspace 5'

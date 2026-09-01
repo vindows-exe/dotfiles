@@ -1,0 +1,110 @@
+# ==============================================================================
+# Global Dotfiles .gitignore - Strikter Secrets- & Sicherheitsfilter
+# ==============================================================================
+
+# --- Betriebssystem & Metadaten ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# --- SSH-, GPG- & Kryptografische Schlüssel ---
+*.pem
+*.key
+*.pub
+*.pkcs12
+*.p12
+*.pfx
+*.asc
+*.gpg
+*.sig
+id_rsa*
+id_ecdsa*
+id_ed25519*
+id_dsa*
+known_hosts*
+authorized_keys*
+.ssh/
+ssh/
+.gnupg/
+gnupg/
+
+# --- Secrets, API-Tokens, Zugangsdaten & .env-Dateien ---
+.env
+.env.*
+!.env.example
+*.env
+*.tokens
+*.token
+*.auth
+*auth.json
+*oauth*.json
+*credentials*.json
+*credentials.db
+*access_tokens.db
+*jetski*
+*token_seed*
+*secrets*
+*secrets.zsh
+
+# --- Lokale Overrides & Private Konfigurationen ---
+*.local
+*.local.*
+*.local.json
+*.local.toml
+*.local.zsh
+*.local.lua
+*.private
+*.private.*
+*.private.zsh
+*.override
+*.override.*
+settings.local.json
+karabiner/automatic_backups/
+automatic_backups/
+
+# --- Shell- & REPL-Historien / Laufzeit-Zustände ---
+.*_history
+*.history
+.zsh_history
+.bash_history
+.python_history
+.node_repl_history
+.zsh_sessions/
+.zcompdump*
+.viminfo
+.netrwhist
+.bash_sessions/
+
+# --- Logs & Temporäre Dateien ---
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+nvim.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- Paketmanager & Caches ---
+node_modules/
+.cache/
+.bun/
+.npm/
+.yarn/
+vendor/
+
+# --- Datenbanken & Caches ---
+*.sqlite
+*.sqlite3
+*.sqlite-shm
+*.sqlite-wal
+*.db
+*.db-shm
+*.db-wal

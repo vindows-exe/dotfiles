@@ -1,0 +1,11 @@
+font-family = "JetBrainsMono Nerd Font"
+font-size = 14
+# Der harte Retro-Kontrast
+theme = gruvbox-dark-hard
+
+# Clean UI
+cursor-style = block
+shell-integration = zsh
+
+# Wichtig für Neovim Keybindings
+macos-option-as-alt = false

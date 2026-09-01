@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+
+# Tmux Sessionizer: Blitzschnelles Wechseln zwischen Projekt-Sessions
+# Inspiriert von ThePrimeagen
+
+if [[ $# -eq 1 ]]; then
+    selected=$1
+else
+    # 1. Haupt-Projektpfade definieren
+    search_paths=(
+        "$HOME/Documents/Dev"
+        "$HOME/Documents/Projects"
+        "$HOME/.config"
+        "$HOME/Developer"
+        "$HOME/Projects"
+        "$HOME/code"
+        "$HOME/work"
+        "$HOME/git"
+        "$HOME/Workspace"
+        "$HOME/Development"
+    )
+
+    # 2. Nur Pfade sammeln, die auch wirklich existieren
+    existing_paths=()
+    for p in "${search_paths[@]}"; do
+        if [[ -d "$p" ]]; then
+            existing_paths+=("$p")
+        fi
+    done
+
+    # Falls noch keine Standardordner existieren, nimm .config als Basis
+    if [[ ${#existing_paths[@]} -eq 0 ]]; then
+        existing_paths=("$HOME/.config")
+    fi
+
+    # 3. Schnelle Suche mit fd (bevorzugt) oder find (bis Tiefe 2, ignoriert .git/node_modules)
+    if command -v fd &> /dev/null; then
+        selected=$(fd . "${existing_paths[@]}" --min-depth 1 --max-depth 2 --type d \
+            --exclude .git --exclude node_modules --exclude target --exclude build --exclude dist 2>/dev/null | fzf)
+    else
+        selected=$(find "${existing_paths[@]}" -mindepth 1 -maxdepth 2 \
+            \( -name .git -o -name node_modules -o -name target -o -name build -o -name dist \) -prune \
+            -o -type d -print 2>/dev/null | fzf)
+    fi
+fi
+
+if [[ -z "$selected" ]]; then
+    exit 0
+fi
+
+# Ersetze Punkte im Session-Namen (z. B. .config -> _config)
+selected_name=$(basename "$selected" | tr . _)
+tmux_running=$(pgrep tmux)
+
+# Falls Tmux noch gar nicht läuft und wir nicht in Tmux sind
+if [[ -z "$TMUX" ]] && [[ -z "$tmux_running" ]]; then
+    tmux new-session -s "$selected_name" -c "$selected"
+    exit 0
+fi
+
+# Erstelle Session im Hintergrund, falls sie noch nicht existiert
+if ! tmux has-session -t="$selected_name" 2> /dev/null; then
+    tmux new-session -ds "$selected_name" -c "$selected"
+fi
+
+# Wechsle zur Session
+if [[ -z "$TMUX" ]]; then
+    tmux attach-session -t "$selected_name"
+else
+    tmux switch-client -t "$selected_name"
+fi

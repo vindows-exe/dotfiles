@@ -1,0 +1,5 @@
+[user]
+	email = redacted@example.invalid
+	name = REDACTED
+[core]
+	editor = nvim
