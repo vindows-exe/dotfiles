@@ -1,6 +1,6 @@
 font-family = "JetBrainsMono Nerd Font"
 font-size = 14
-theme = gruvbox-dark
+theme = kanagawa-wave
 
 # Window styling & transparency
 background-opacity = 0.88

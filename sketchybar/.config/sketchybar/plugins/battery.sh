@@ -10,25 +10,25 @@ fi
 
 if [ -n "$CHARGING" ]; then
   ICON="󰂄"
-  COLOR="0xffb8bb26" # Green
+  COLOR="0xff98bb6c" # Spring Green
 elif [ "$PERCENTAGE" -ge 90 ]; then
   ICON="󰁹"
-  COLOR="0xff8ec07c" # Aqua
+  COLOR="0xff6a9589" # Wave Aqua 2
 elif [ "$PERCENTAGE" -ge 70 ]; then
   ICON="󰂀"
-  COLOR="0xffebdbb2" # Foreground
+  COLOR="0xff7e9cd8" # Wave Blue
 elif [ "$PERCENTAGE" -ge 50 ]; then
   ICON="󰁾"
-  COLOR="0xffebdbb2" # Foreground
+  COLOR="0xffdcd7ba" # Fuji White
 elif [ "$PERCENTAGE" -ge 30 ]; then
   ICON="󰁼"
-  COLOR="0xfffabd2f" # Yellow
+  COLOR="0xffe6c384" # Boat Yellow
 elif [ "$PERCENTAGE" -ge 15 ]; then
   ICON="󰁺"
-  COLOR="0xfffe8019" # Orange
+  COLOR="0xffffa066" # Surimi Orange
 else
   ICON="󰂃"
-  COLOR="0xfffb4934" # Red
+  COLOR="0xffc34043" # Autumn Red
 fi
 
 sketchybar --set "$NAME" icon="$ICON" icon.color="$COLOR" label="${PERCENTAGE}%"

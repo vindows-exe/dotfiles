@@ -2,4 +2,6 @@
 	email = redacted@example.invalid
 	name = REDACTED
 [core]
-	editor = nvim
+  editor = nvim
+[includeIf "hasconfig:remote.*.url:*github.com*"]
+    path = ~/.gitconfig-personal

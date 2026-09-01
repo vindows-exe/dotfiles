@@ -8,11 +8,11 @@ if [ -z "$SSID" ]; then
 fi
 
 if [ -z "$SSID" ] || [ "$SSID" = "You are not associated with an AirPort network." ] || [[ "$SSID" =~ "Error" ]] || [[ "$SSID" =~ "error" ]]; then
-  sketchybar --set "$NAME" icon="󰖪" label="Disconnected" icon.color="0xff928374"
+  sketchybar --set "$NAME" icon="󰖪" label="Disconnected" icon.color="0xff727169"
 else
   # Truncate long SSIDs if needed
   if [ ${#SSID} -gt 16 ]; then
     SSID="$(echo "$SSID" | cut -c 1-13)..."
   fi
-  sketchybar --set "$NAME" icon="󰖩" label="$SSID" icon.color="0xff8ec07c"
+  sketchybar --set "$NAME" icon="󰖩" label="$SSID" icon.color="0xff6a9589"
 fi

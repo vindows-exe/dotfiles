@@ -42,8 +42,9 @@ function y() {
 source "${BREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "${BREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-# Farbe der Vorschläge an Gruvbox anpassen (Grau)
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
+# Farbe der Vorschläge an Kanagawa anpassen
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#727169'
+FZF_DEFAULT_OPTS="--color=bg+:#2a2a37,bg:#1f1f28,spinner:#957fb8,hl:#957fb8,fg:#dcd7ba,header:#957fb8,info:#6a9589,pointer:#957fb8,marker:#98bb6c,fg+:#dcd7ba,prompt:#7e9cd8,hl+:#957fb8"
 
 # Angular CLI autocompletion (pre-generated, einmalig mit: ng completion script > ~/.zsh/ng_completion.zsh)
 [[ -f ~/.zsh/ng_completion.zsh ]] && source ~/.zsh/ng_completion.zsh

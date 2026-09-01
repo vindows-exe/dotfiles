@@ -10,12 +10,12 @@ fi
 
 if [ "$WORKSPACE_ID" = "$FOCUSED_WORKSPACE" ]; then
   sketchybar --set "$NAME" \
-    background.color=0xfffe8019 \
-    label.color=0xff282828 \
-    icon.color=0xff282828
+    background.color=0xff957fb8 \
+    label.color=0xff1f1f28 \
+    icon.color=0xff1f1f28
 else
   sketchybar --set "$NAME" \
-    background.color=0xff3c3836 \
-    label.color=0xffebdbb2 \
-    icon.color=0xffebdbb2
+    background.color=0xff2a2a37 \
+    label.color=0xffdcd7ba \
+    icon.color=0xffdcd7ba
 fi

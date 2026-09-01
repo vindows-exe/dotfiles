@@ -2,6 +2,12 @@ start-at-login = true
 
 default-root-container-layout = 'tiles'
 
+# Autostart tools on AeroSpace launch
+after-startup-command = [
+  'exec-and-forget /opt/homebrew/bin/borders',
+  'exec-and-forget /opt/homebrew/bin/sketchybar'
+]
+
 # Trigger SketchyBar update on workspace switch
 exec-on-workspace-change = ['/bin/bash', '-c', '/opt/homebrew/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE']
 
