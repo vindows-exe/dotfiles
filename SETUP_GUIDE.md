@@ -50,7 +50,7 @@ Dokumentation der installierten Software und Anleitung zur Einrichtung eines neu
 | Stow-Paket | Zielpfad | Funktion |
 | :--- | :--- | :--- |
 | `aerospace` | `~/.config/aerospace/aerospace.toml` | Keybindings, Multi-Monitor-Gaps und Workspace-Routing |
-| `borders` | `~/.config/borders/bordersrc` | Rahmenstil (eckig) und Farbe (Kanagawa-Türkis) |
+| `borders` | `~/.config/borders/bordersrc` | Rahmenstil (abgerundet) und Farbe (Kanagawa-Türkis) |
 | `sketchybar` | `~/.config/sketchybar/` | Statusleiste, AeroSpace-Workspaces, Music/VPN-Pillen |
 | `ghostty` | `~/.config/ghostty/` | Terminalkonfiguration und Themes |
 | `git` | `~/.gitconfig`, `~/.config/git/ignore` | Globale Git-Einstellungen und Ignore-Regeln |
