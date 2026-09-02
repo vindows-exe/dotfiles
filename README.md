@@ -32,7 +32,6 @@ Die Konfigurationen sind in eigenständige GNU Stow-Pakete unterteilt:
 | `git` | Git | Globale Git-Einstellungen und Ignore-Regeln |
 | `yazi` | Yazi | Terminal-Dateimanager |
 | `raycast-scripts` | Raycast | Benutzerdefinierte Raycast-Skripte |
-| `opencode` | OpenCode | Agenten- und Modelldefinitionen |
 
 ## Verzeichnisstruktur
 
@@ -45,7 +44,6 @@ Die Konfigurationen sind in eigenständige GNU Stow-Pakete unterteilt:
 ├── ghostty/              # ~/.config/ghostty/
 ├── git/                  # ~/.gitconfig und ~/.config/git/
 ├── nvim/                 # ~/.config/nvim/
-├── opencode/             # ~/.config/opencode/
 ├── raycast-scripts/      # ~/.config/RaycastScripts/
 ├── starship/             # ~/.config/starship.toml
 ├── tmux/                 # ~/.config/tmux/

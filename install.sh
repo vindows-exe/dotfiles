@@ -133,7 +133,6 @@ ALL_PACKAGES=(
     nvim
     yazi
     fastfetch
-    opencode
 )
 
 # macOS-spezifische Pakete hinzufügen

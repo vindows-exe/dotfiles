@@ -55,7 +55,6 @@ Dokumentation der installierten Software und Anleitung zur Einrichtung eines neu
 | `ghostty` | `~/.config/ghostty/` | Terminalkonfiguration und Themes |
 | `git` | `~/.gitconfig`, `~/.config/git/ignore` | Globale Git-Einstellungen und Ignore-Regeln |
 | `nvim` | `~/.config/nvim/` | LazyVim Setup |
-| `opencode` | `~/.config/opencode/` | Agenten-Prompts |
 | `raycast-scripts` | `~/.config/RaycastScripts/` | Benutzerdefinierte Skripte |
 | `starship` | `~/.config/starship.toml` | Prompt-Layout |
 | `fastfetch` | `~/.config/fastfetch/config.jsonc` | Minimalistisches Systeminfo-Layout |
