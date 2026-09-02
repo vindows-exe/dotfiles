@@ -3,12 +3,8 @@
   "logo": {
     "source": "~/.config/fastfetch/logo.txt",
     "type": "file",
-    "color": {
-      "1": "38;2;126;156;216",
-      "2": "38;2;106;149;137"
-    },
     "padding": {
-      "top": 1,
+      "top": 0,
       "left": 1,
       "right": 2
     }
@@ -65,6 +61,12 @@
       "keyColor": "38;2;149;127;184"
     },
     {
+      "type": "display",
+      "key": "Display",
+      "keyColor": "38;2;122;168;159",
+      "compactType": "original"
+    },
+    {
       "type": "wm",
       "key": "WM",
       "keyColor": "38;2;122;168;159"
@@ -75,16 +77,70 @@
       "keyColor": "38;2;122;168;159"
     },
     {
+      "type": "font",
+      "key": "Font",
+      "keyColor": "38;2;122;168;159"
+    },
+    {
+      "type": "cursor",
+      "key": "Cursor",
+      "keyColor": "38;2;122;168;159"
+    },
+    {
       "type": "cpu",
       "key": "CPU",
       "keyColor": "38;2;152;187;108"
     },
     {
-      "type": "memory",
-      "key": "Memory",
+      "type": "gpu",
+      "key": "GPU",
       "keyColor": "38;2;152;187;108"
     },
+    {
+      "type": "memory",
+      "key": "Memory",
+      "keyColor": "38;2;255;160;102"
+    },
+    {
+      "type": "swap",
+      "key": "Swap",
+      "keyColor": "38;2;255;160;102"
+    },
+    {
+      "type": "disk",
+      "key": "Disk",
+      "keyColor": "38;2;232;68;90"
+    },
+    {
+      "type": "battery",
+      "key": "Battery",
+      "keyColor": "38;2;152;187;108"
+    },
+    {
+      "type": "poweradapter",
+      "key": "Power",
+      "keyColor": "38;2;152;187;108"
+    },
+    {
+      "type": "sound",
+      "key": "Sound",
+      "keyColor": "38;2;122;168;159"
+    },
+    {
+      "type": "datetime",
+      "key": "Date",
+      "keyColor": "38;2;114;113;105",
+      "format": "{year}-{month-pretty}-{day-pretty} {hour-pretty}:{minute-pretty}"
+    },
+    {
+      "type": "locale",
+      "key": "Locale",
+      "keyColor": "38;2;114;113;105"
+    },
     "break",
-    "colors"
+    {
+      "type": "colors",
+      "symbol": "circle"
+    }
   ]
 }
