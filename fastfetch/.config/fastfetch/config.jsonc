@@ -1,7 +1,12 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "type": "small",
+    "source": "~/.config/fastfetch/logo.txt",
+    "type": "file",
+    "color": {
+      "1": "38;2;126;156;216",
+      "2": "38;2;106;149;137"
+    },
     "padding": {
       "top": 1,
       "left": 1,
@@ -9,60 +14,75 @@
     }
   },
   "display": {
-    "separator": " 󰄾 "
+    "separator": " 󰄾 ",
+    "color": {
+      "separator": "38;2;149;127;184"
+    }
   },
   "modules": [
-    "title",
-    "separator",
+    {
+      "type": "title",
+      "color": {
+        "user": "38;2;220;215;186",
+        "at": "38;2;114;113;105",
+        "host": "38;2;126;156;216"
+      }
+    },
+    {
+      "type": "separator",
+      "string": "─",
+      "length": 30,
+      "outputColor": "38;2;114;113;105"
+    },
     {
       "type": "os",
       "key": "OS",
-      "keyColor": "33"
+      "keyColor": "38;2;126;156;216"
     },
     {
       "type": "host",
       "key": "Host",
-      "keyColor": "33"
+      "keyColor": "38;2;126;156;216"
     },
     {
       "type": "kernel",
       "key": "Kernel",
-      "keyColor": "34"
+      "keyColor": "38;2;106;149;137"
     },
     {
       "type": "uptime",
       "key": "Uptime",
-      "keyColor": "34"
+      "keyColor": "38;2;106;149;137"
     },
     {
       "type": "packages",
       "key": "Packages",
-      "keyColor": "35"
+      "keyColor": "38;2;149;127;184"
     },
     {
       "type": "shell",
       "key": "Shell",
-      "keyColor": "35"
+      "keyColor": "38;2;149;127;184"
     },
     {
       "type": "wm",
       "key": "WM",
-      "keyColor": "36"
+      "keyColor": "38;2;122;168;159"
     },
     {
       "type": "terminal",
       "key": "Terminal",
-      "keyColor": "36"
+      "keyColor": "38;2;122;168;159"
     },
     {
       "type": "cpu",
       "key": "CPU",
-      "keyColor": "32"
+      "keyColor": "38;2;152;187;108"
     },
     {
       "type": "memory",
       "key": "Memory",
-      "keyColor": "32"
+      "keyColor": "38;2;152;187;108"
     },
     "break",
     "colors"
