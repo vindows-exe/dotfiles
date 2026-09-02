@@ -31,7 +31,6 @@ Die Konfigurationen sind in eigenständige GNU Stow-Pakete unterteilt:
 | `fastfetch` | Fastfetch | Minimalistisches Systeminfo-Tool |
 | `git` | Git | Globale Git-Einstellungen und Ignore-Regeln |
 | `yazi` | Yazi | Terminal-Dateimanager |
-| `karabiner` | Karabiner-Elements | Tastatur-Remapping (Caps-Lock zu Hyper-Key) |
 | `raycast-scripts` | Raycast | Benutzerdefinierte Raycast-Skripte |
 | `opencode` | OpenCode | Agenten- und Modelldefinitionen |
 
@@ -45,7 +44,6 @@ Die Konfigurationen sind in eigenständige GNU Stow-Pakete unterteilt:
 ├── sketchybar/           # ~/.config/sketchybar/
 ├── ghostty/              # ~/.config/ghostty/
 ├── git/                  # ~/.gitconfig und ~/.config/git/
-├── karabiner/            # ~/.config/karabiner/
 ├── nvim/                 # ~/.config/nvim/
 ├── opencode/             # ~/.config/opencode/
 ├── raycast-scripts/      # ~/.config/RaycastScripts/

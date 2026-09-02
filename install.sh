@@ -143,7 +143,6 @@ if [[ "$OS" == "Darwin" ]]; then
         borders
         sketchybar
         ghostty
-        karabiner
         raycast-scripts
     )
 fi

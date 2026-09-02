@@ -63,7 +63,6 @@ gnupg/
 *.override
 *.override.*
 settings.local.json
-karabiner/automatic_backups/
 automatic_backups/
 
 # Private Git Configs (z. B. SSH Key Switching, Firmen- / Personal-Profile)

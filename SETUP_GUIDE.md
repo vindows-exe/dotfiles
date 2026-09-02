@@ -12,7 +12,6 @@ Dokumentation der installierten Software und Anleitung zur Einrichtung eines neu
 | **AeroSpace** | Tiling Window Manager für macOS | `brew install --cask nikitabobko/tap/aerospace` |
 | **Sketchybar** | Statusleiste für macOS (Workspaces, System, Musik, VPN) | `brew install felixkratz/formulae/sketchybar` |
 | **JankyBorders** | Fensterrahmen-Hervorhebung | `brew install felixkratz/formulae/borders` |
-| **Karabiner-Elements** | Tastatur-Remapping (Caps-Lock als Hyper-Key) | `brew install --cask karabiner-elements` |
 | **Ghostty** | GPU-beschleunigter Terminal-Emulator | `brew install --cask ghostty` |
 | **Raycast** | Anwendungs- und Skript-Launcher | `brew install --cask raycast` |
 | **Scroll Reverser** | Unabhängiges Scrollen für Trackpad und Maus | `brew install --cask scroll-reverser` |
@@ -55,7 +54,6 @@ Dokumentation der installierten Software und Anleitung zur Einrichtung eines neu
 | `sketchybar` | `~/.config/sketchybar/` | Statusleiste, AeroSpace-Workspaces, Music/VPN-Pillen |
 | `ghostty` | `~/.config/ghostty/` | Terminalkonfiguration und Themes |
 | `git` | `~/.gitconfig`, `~/.config/git/ignore` | Globale Git-Einstellungen und Ignore-Regeln |
-| `karabiner` | `~/.config/karabiner/karabiner.json` | Caps-Lock als Modifier |
 | `nvim` | `~/.config/nvim/` | LazyVim Setup |
 | `opencode` | `~/.config/opencode/` | Agenten-Prompts |
 | `raycast-scripts` | `~/.config/RaycastScripts/` | Benutzerdefinierte Skripte |
@@ -92,7 +90,6 @@ brew install --cask \
   font-jetbrains-mono-nerd-font \
   ghostty \
   raycast \
-  karabiner-elements \
   nikitabobko/tap/aerospace \
   scroll-reverser \
   vorssaint
@@ -105,9 +102,8 @@ brew services start felixkratz/formulae/sketchybar
 ```
 
 ### Schritt 6: Systemberechtigungen vergeben (macOS)
-1. **Bedienungshilfen (Accessibility):** `AeroSpace` und `Karabiner-Elements` aktivieren.
-2. **Eingabeüberwachung (Input Monitoring):** `Karabiner-Elements` aktivieren.
-3. **Raycast:** Unter *Settings -> Extensions -> Script Commands* das Verzeichnis `~/.config/RaycastScripts` hinzufügen.
+1. **Bedienungshilfen (Accessibility):** `AeroSpace` aktivieren.
+2. **Raycast:** Unter *Settings -> Extensions -> Script Commands* das Verzeichnis `~/.config/RaycastScripts` hinzufügen.
 
 ### Schritt 7: Shell initialisieren & private Overrides anlegen
 1. Shell neu starten:
