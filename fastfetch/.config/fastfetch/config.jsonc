@@ -69,7 +69,8 @@
     {
       "type": "wm",
       "key": "WM",
-      "keyColor": "38;2;122;168;159"
+      "keyColor": "38;2;122;168;159",
+      "format": "AeroSpace"
     },
     {
       "type": "terminal",
@@ -79,12 +80,14 @@
     {
       "type": "font",
       "key": "Font",
-      "keyColor": "38;2;122;168;159"
+      "keyColor": "38;2;122;168;159",
+      "format": "{1}"
     },
     {
       "type": "cursor",
       "key": "Cursor",
-      "keyColor": "38;2;122;168;159"
+      "keyColor": "38;2;122;168;159",
+      "format": "{1} ({2}px)"
     },
     {
       "type": "cpu",
@@ -94,7 +97,8 @@
     {
       "type": "gpu",
       "key": "GPU",
-      "keyColor": "38;2;152;187;108"
+      "keyColor": "38;2;152;187;108",
+      "format": "{2} ({5}c)"
     },
     {
       "type": "memory",
@@ -109,7 +113,8 @@
     {
       "type": "disk",
       "key": "Disk",
-      "keyColor": "38;2;232;68;90"
+      "keyColor": "38;2;232;68;90",
+      "format": "{1} / {2} ({3})"
     },
     {
       "type": "battery",
