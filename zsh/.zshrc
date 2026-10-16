@@ -13,8 +13,8 @@ eval "$(starship init zsh)"
 eval "$(fnm env)"
 eval "$(fzf --zsh)"
 
-# --- Gruvbox für 'bat' ---
-export BAT_THEME="Gruvbox-Dark"
+# --- ANSI / Kanagawa Dragon für 'bat' ---
+export BAT_THEME="ansi"
 
 # --- Aliases ---
 alias ls="eza --icons"
@@ -42,9 +42,9 @@ function y() {
 source "${BREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "${BREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-# Farbe der Vorschläge an Kanagawa anpassen
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#727169'
-FZF_DEFAULT_OPTS="--color=bg+:#2a2a37,bg:#1f1f28,spinner:#957fb8,hl:#957fb8,fg:#dcd7ba,header:#957fb8,info:#6a9589,pointer:#957fb8,marker:#98bb6c,fg+:#dcd7ba,prompt:#7e9cd8,hl+:#957fb8"
+# Farbe der Vorschläge & FZF an Kanagawa Dragon anpassen
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#737c73'
+FZF_DEFAULT_OPTS="--color=bg+:#282727,bg:#181616,spinner:#87a987,hl:#87a987,fg:#c5c9c5,header:#87a987,info:#8ea4a2,pointer:#87a987,marker:#8a9a7b,fg+:#c5c9c5,prompt:#8ba4b0,hl+:#87a987,border:#625e5a"
 
 # Angular CLI autocompletion (pre-generated, einmalig mit: ng completion script > ~/.zsh/ng_completion.zsh)
 [[ -f ~/.zsh/ng_completion.zsh ]] && source ~/.zsh/ng_completion.zsh

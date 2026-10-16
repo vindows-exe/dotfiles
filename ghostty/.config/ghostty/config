@@ -1,6 +1,6 @@
 font-family = "JetBrainsMono Nerd Font"
 font-size = 14
-theme = "Kanagawa Wave"
+theme = "Kanagawa Dragon"
 
 # Window styling & frosted glass effect
 background-opacity = 0.82
@@ -11,8 +11,10 @@ window-padding-y = 12
 window-decoration = true
 macos-titlebar-style = transparent
 
-# Clean UI
+# Clean UI & Kanagawa Dragon Accents
 cursor-style = block
+cursor-color = #87a987
+selection-background = #393836
 shell-integration = zsh
 
 # Wichtig für Neovim Keybindings

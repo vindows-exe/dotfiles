@@ -1,10 +1,10 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](color_purple)\
+[](color_green)\
 $os\
 $username\
-[](fg:color_purple bg:color_bg1)\
+[](fg:color_green bg:color_bg1)\
 $directory\
 [](fg:color_bg1 bg:color_bg3)\
 $git_branch\
@@ -18,25 +18,26 @@ $time\
 [ ](fg:color_bg0)\
 $line_break$character"""
 
-palette = 'kanagawa_wave'
+palette = 'kanagawa_dragon'
 
-[palettes.kanagawa_wave]
-color_bg0 = '#1f1f28'     # Sumi Ink 1
-color_bg1 = '#2a2a37'     # Sumi Ink 3
-color_bg3 = '#363646'     # Sumi Ink 4
-color_fg0 = '#dcd7ba'     # Fuji White
-color_muted = '#727169'   # Fuji Gray
-color_purple = '#957fb8'  # Oni Violet
-color_aqua = '#6a9589'    # Wave Aqua 2
-color_green = '#98bb6c'   # Spring Green
-color_blue = '#7e9cd8'    # Wave Blue
-color_orange = '#ffa066'  # Surimi Orange
-color_red = '#c34043'     # Autumn Red
-color_yellow = '#e6c384'  # Boat Yellow
+[palettes.kanagawa_dragon]
+color_bg0 = '#181616'     # dragonBlack3
+color_bg1 = '#282727'     # dragonBlack4
+color_bg3 = '#393836'     # dragonBlack5
+color_fg0 = '#c5c9c5'     # dragonWhite
+color_muted = '#737c73'   # dragonAsh
+color_green = '#87a987'   # dragonGreen (Accent Primary)
+color_moss = '#8a9a7b'    # dragonGreen2 (Accent Secondary)
+color_purple = '#87a987'  # Primary Accent Alias (dragonGreen)
+color_aqua = '#8ea4a2'    # dragonAqua
+color_blue = '#8ba4b0'    # dragonBlue
+color_orange = '#b6927b'  # dragonOrange
+color_red = '#c4746e'     # dragonRed
+color_yellow = '#c4b28a'  # dragonYellow
 
 [os]
 disabled = false
-style = "bg:color_purple fg:color_bg0"
+style = "bg:color_green fg:color_bg0"
 
 [os.symbols]
 Windows = "󰍲"

@@ -12,135 +12,135 @@
   "display": {
     "separator": " 󰄾 ",
     "color": {
-      "separator": "38;2;149;127;184"
+      "separator": "38;2;135;169;135"
     }
   },
   "modules": [
     {
       "type": "title",
       "color": {
-        "user": "38;2;220;215;186",
-        "at": "38;2;114;113;105",
-        "host": "38;2;126;156;216"
+        "user": "38;2;197;201;197",
+        "at": "38;2;115;124;115",
+        "host": "38;2;135;169;135"
       }
     },
     {
       "type": "separator",
       "string": "─",
       "length": 30,
-      "outputColor": "38;2;114;113;105"
+      "outputColor": "38;2;98;94;90"
     },
     {
       "type": "os",
       "key": "OS",
-      "keyColor": "38;2;126;156;216"
+      "keyColor": "38;2;139;164;176"
     },
     {
       "type": "host",
       "key": "Host",
-      "keyColor": "38;2;126;156;216"
+      "keyColor": "38;2;139;164;176"
     },
     {
       "type": "kernel",
       "key": "Kernel",
-      "keyColor": "38;2;106;149;137"
+      "keyColor": "38;2;142;164;162"
     },
     {
       "type": "uptime",
       "key": "Uptime",
-      "keyColor": "38;2;106;149;137"
+      "keyColor": "38;2;142;164;162"
     },
     {
       "type": "packages",
       "key": "Packages",
-      "keyColor": "38;2;149;127;184"
+      "keyColor": "38;2;135;169;135"
     },
     {
       "type": "shell",
       "key": "Shell",
-      "keyColor": "38;2;149;127;184"
+      "keyColor": "38;2;135;169;135"
     },
     {
       "type": "display",
       "key": "Display",
-      "keyColor": "38;2;122;168;159",
+      "keyColor": "38;2;142;164;162",
       "compactType": "original"
     },
     {
       "type": "wm",
       "key": "WM",
-      "keyColor": "38;2;122;168;159",
+      "keyColor": "38;2;142;164;162",
       "format": "AeroSpace"
     },
     {
       "type": "terminal",
       "key": "Terminal",
-      "keyColor": "38;2;122;168;159"
+      "keyColor": "38;2;142;164;162"
     },
     {
       "type": "font",
       "key": "Font",
-      "keyColor": "38;2;122;168;159",
+      "keyColor": "38;2;142;164;162",
       "format": "{1}"
     },
     {
       "type": "cursor",
       "key": "Cursor",
-      "keyColor": "38;2;122;168;159",
+      "keyColor": "38;2;142;164;162",
       "format": "{1} ({2}px)"
     },
     {
       "type": "cpu",
       "key": "CPU",
-      "keyColor": "38;2;152;187;108"
+      "keyColor": "38;2;138;154;123"
     },
     {
       "type": "gpu",
       "key": "GPU",
-      "keyColor": "38;2;152;187;108",
+      "keyColor": "38;2;138;154;123",
       "format": "{2} ({5}c)"
     },
     {
       "type": "memory",
       "key": "Memory",
-      "keyColor": "38;2;255;160;102"
+      "keyColor": "38;2;196;178;138"
     },
     {
       "type": "swap",
       "key": "Swap",
-      "keyColor": "38;2;255;160;102"
+      "keyColor": "38;2;182;146;123"
     },
     {
       "type": "disk",
       "key": "Disk",
-      "keyColor": "38;2;232;68;90",
+      "keyColor": "38;2;196;116;110",
       "format": "{1} / {2} ({3})"
     },
     {
       "type": "battery",
       "key": "Battery",
-      "keyColor": "38;2;152;187;108"
+      "keyColor": "38;2;135;169;135"
     },
     {
       "type": "poweradapter",
       "key": "Power",
-      "keyColor": "38;2;152;187;108"
+      "keyColor": "38;2;135;169;135"
     },
     {
       "type": "sound",
       "key": "Sound",
-      "keyColor": "38;2;122;168;159"
+      "keyColor": "38;2;142;164;162"
     },
     {
       "type": "datetime",
       "key": "Date",
-      "keyColor": "38;2;114;113;105",
+      "keyColor": "38;2;115;124;115",
       "format": "{year}-{month-pretty}-{day-pretty} {hour-pretty}:{minute-pretty}"
     },
     {
       "type": "locale",
       "key": "Locale",
-      "keyColor": "38;2;114;113;105"
+      "keyColor": "38;2;115;124;115"
     },
     "break",
     {

@@ -57,7 +57,7 @@ done
 sketchybar --add item window_title left \
   --set window_title \
     icon="󰘳" \
-    icon.color=$ACCENT_VIOLET \
+    icon.color=$ACCENT_GREEN \
     label="Desktop" \
     label.color=$TEXT_COLOR \
     label.font="$FONT:Medium:12.0" \

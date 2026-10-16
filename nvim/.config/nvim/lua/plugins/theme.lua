@@ -4,8 +4,17 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      theme = "wave",
+      compile = false,
+      undercurl = true,
+      commentStyle = { italic = false },
+      keywordStyle = { italic = false },
+      statementStyle = { bold = true },
       transparent = true,
+      theme = "dragon",
+      background = {
+        dark = "dragon",
+        light = "lotus",
+      },
       colors = {
         theme = {
           all = {
@@ -36,11 +45,15 @@ return {
         }
       end,
     },
+    config = function(_, opts)
+      require("kanagawa").setup(opts)
+      vim.cmd("colorscheme kanagawa-dragon")
+    end,
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa-wave",
+      colorscheme = "kanagawa-dragon",
     },
   },
 }
